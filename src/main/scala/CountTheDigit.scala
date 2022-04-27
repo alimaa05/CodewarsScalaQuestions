@@ -2,7 +2,7 @@ object CountTheDigit extends App {
 
   def nbDig(n: Int, d: Int): Int = {
     val myList = List.range(0, n + 1)
-    // List.range - creating a List from a range, starting from 0 upto n + 1 (need + 1 bec its not inclusive)
+    // List.range - creating a List from a range, starting from 0 up to n + 1 (need + 1 bec its not inclusive)
     var count = 0
     // we want to work out the count so we set a variable 'count' as 0 to start with
     val squareslist = myList.flatMap(e => Math.pow(e, 2).toInt.toString)
@@ -11,13 +11,13 @@ object CountTheDigit extends App {
     // it returns a new array but here the inner groupings of an item are removed and a sequence is generated
     // its a combo of Map method and flatten method
     // Map method converts one collection to another by applying a function to all elements in the first collection
-    // flatten method collapses the elements of a collection to create single collenction with elements of the same type
+    // flatten method collapses the elements of a collection to create single collection with elements of the same type
 
     // the new array is called e and the function we apply to each element is Math.pow()
     // Math.pow() function accepts two variables - used when you want the power/exponent of a value
-    // first the number and second the power of the number up to which data exponenet is to be found i.e. the power value
+    // first the number and second the power of the number up to which data exponent is to be found i.e. the power value
     // it returns the base raise to the power of exponent
-    //.toInt converts it to an Interger
+    //.toInt converts it to an Integer
     // .toString converts it into a String
     for {square <- squareslist
          if square.toString.map(_.asDigit).contains(d)} yield {
@@ -32,7 +32,7 @@ object CountTheDigit extends App {
     // .asDigit method used to represent characters in the form of digit - return type is an Int
     // .contains - see if it contains the arg d
     // yield converts a statement into an expression
-    // for each iteration of for loop, yield generates a value thats remembered by the for loop
+    // for each iteration of for loop, yield generates a value that's remembered by the for loop
     // each time we iterate over the loop want to add 1 to the count
     count
     // want to return the count
