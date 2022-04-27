@@ -1,4 +1,4 @@
-object countingSheep extends App{
+object CountingSheep extends App{
 
   def countingSheep(num: Int): String = {
     val sheep = num + " sheep..."
