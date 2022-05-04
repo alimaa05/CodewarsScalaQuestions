@@ -13,25 +13,16 @@ object ExesAndOhs extends App {
 
   def xo(str: String): Boolean = {
 
-    val x = 0
-    val o = 0
+    val x = str.count(_ == 'x') | str.count(_=='X')
+    val o = str.count(_ == 'o') | str.count(_ == 'O')
+
 
     if (str.isEmpty) true
-    else {
-      for (i <- 0 until(str.length) i+1) yield {
-
-        if (x == "x") {
-          x + 1
-        } else if (o == "o") {
-          o + 1
-        }
-//        return x == o
-      }
-    }
-
+    else if (x == o) true
+    else (x < o)
 
   }
-  println(xo("XO"))
+  println(xo("xxxoo"))
 
 }
 
@@ -42,3 +33,32 @@ object ExesAndOhs extends App {
 //      val emptyString: Boolean = str.isEmpty
 //
 //      countO == countX &&  str.contains("""x""") && str.contains("""o""") || str.contains("""X""") && str.contains("""O""") && emptyString
+
+
+
+//if (str.isEmpty) true
+//else {
+//  for (i <- 0 until(str.length) i+1) yield {
+//
+//    if (x == "x") {
+//      x + 1
+//    } else if (o == "o") {
+//      o + 1
+//    }
+//    //        return x == o
+//  }
+//}
+
+//
+//val countX = str.count(x == o)
+//val countO = str.count(o)
+//
+//
+//if (str.isEmpty) true
+//else if (str.count(x==o)
+//else (x != o)
+
+
+//if (str.isEmpty) true
+//else if ((str.toLowerCase() == "x") || (str.toLowerCase() == "o")) true
+//else false
