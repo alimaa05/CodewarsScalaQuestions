@@ -16,7 +16,7 @@ object ArrayDiff extends App {
     if (b.isEmpty) a
     else if (a.isEmpty) a
     else for (n <- 0 until a.length) yield {
-      return (a diff b) diff b
+      return a.diff(b).diff(b)
     }
   }
   println(arrayDiff(Seq(1,1,2), Seq(1)))

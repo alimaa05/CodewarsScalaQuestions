@@ -11,21 +11,25 @@ import scala.collection.mutable
 
 object Mumbling extends App {
 
-  def accum(s: String): String = {
-
-    val result = ""
-    val split = s.split("-")
-
-    for (i <- 0 until split.length) yield {
-      val f = split.map(c => c.toUpperCase() + c.toLowerCase().repeat(i))
-      result:+f
-
+    def accum(s: String) = {
+      val sArr = s.toLowerCase.split("")
+      var result = ""
+      var substring = ""
+      for (i <- sArr.indices) yield {
+        substring = (s"${sArr(i)}" * (i+1)).capitalize
+        //      if (i < sArr.length - 1) result += s"${substring}-"
+        //      else if (i == sArr.length - 1) result += s"${substring}"
+        result += substring + "-"
+      }
+      result.substring(0, result.length-1)
     }
-    return result.mkString
+  println(accum("abcd"))
   }
 
-  println(accum("abed"))
-}
+
+//for (i <- 0 until s.length by 1) yield {
+//  s.split("-").map(c => c.toUpperCase() + c.toLowerCase().repeat(i)).mkString
+//}
 
 
 //val result = ""
@@ -40,3 +44,15 @@ object Mumbling extends App {
 //}
 
 //val t =
+
+
+
+//    val result = ""
+//    val split = s.split("-")
+//
+//    for (i <- 0 until split.length) yield {
+//      val a = split.map(s => s.toUpperCase() + s.toLowerCase().repeat(1))
+//      result:+a
+//
+//    }
+//    return result.mkString
